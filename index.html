@@ -1,238 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/jgg" href="./favicon/favicon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jgg" href="./favicon/favicon.png" />
     <title>Jiban Budhathoki's Sites</title>
     <!---Prevent color flashing start--->
-        <!--the code must should be written at the top ------->
-        <style>
-            html[data-theme="light"]{
-                background: #efeff1;
-            }
-            html[data-theme="dark"]{
-                background: #0a0a0c;
-            }
-        </style>
-        <!----javascript to prevent color flashing------>
-        <script>
-            (function(){
-                const storageKey = "theme";
-                function setTheme(darkMode){
-                    document.documentElement.setAttribute(
-                        "data-theme", 
-                        darkMode ? "dark" : "light"
-                    );
-                }
-                const mql = window.matchMedia("(prefers-color-scheme:dark)");
-                const storedTheme = localStorage.getItem(storageKey); 
-                const darkMode = storedTheme ? JSON.parse(storedTheme) : mql.matches;
-                setTheme(darkMode);
-                localStorage.setItem(storageKey, darkMode);
-            })();
-        </script>
+    <!--the code must should be written at the top ------->
+    <style>
+      html[data-theme="light"] {
+        background: #efeff1;
+      }
+      html[data-theme="dark"] {
+        background: #0a0a0c;
+      }
+    </style>
+    <!----javascript to prevent color flashing------>
+    <script>
+      (function () {
+        const storageKey = "theme";
+        function setTheme(darkMode) {
+          document.documentElement.setAttribute(
+            "data-theme",
+            darkMode ? "dark" : "light"
+          );
+        }
+        const mql = window.matchMedia("(prefers-color-scheme:dark)");
+        const storedTheme = localStorage.getItem(storageKey);
+        const darkMode = storedTheme ? JSON.parse(storedTheme) : mql.matches;
+        setTheme(darkMode);
+        localStorage.setItem(storageKey, darkMode);
+      })();
+    </script>
     <!---Prevent color flashing End--->
 
     <!---Google fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
- 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+
     <!--highlight js-------->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <script>
+      hljs.highlightAll();
+    </script>
 
     <!----gsap cdn---------------->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" 
-    integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" 
-    integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!---Custom Links---------->
-    <link rel="stylesheet" href="./CSS/index.css">
-    <link rel="stylesheet" href="./CSS/main.css">
-</head>
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <link rel="stylesheet" href="./CSS/main.css" />
+  </head>
 
-<body>
-
-
+  <body>
     <!----NavBar Start---------------->
     <nav id="navbar" class="flex__center">
-        <div class="logo">
-            <i data-custom-icon="logo"></i>
+      <div class="logo">
+        <i data-custom-icon="logo"></i>
+      </div>
+      <div class="flex nav__routes">
+        <a href="#header" class="route active">Home</a>
+        <a href="#about" class="route">About</a>
+        <a href="#services" class="route">Services</a>
+        <a href="#projects" class="route">Projects</a>
+        <a href="#contact" class="route">Contacts</a>
+      </div>
+      <div class="flex__center">
+        <label class="theme__toggle">
+          <input type="checkbox" name="" id="theme-checkbox" />
+          <div class="icon__container">
+            <i data-lucide="sun" class="moon"></i>
+            <i data-lucide="moon" class="sun"></i>
+          </div>
+        </label>
+        <div class="icon__container menu__btn" id="menu__btn">
+          <i data-lucide="align-justify"></i>
         </div>
-        <div class="flex nav__routes">
-            <a href="#header" class="route active">Home</a>
-            <a href="#about" class="route">About</a>
-            <a href="#services" class="route">Services</a>
-            <a href="#projects" class="route">Projects</a>
-            <a href="#contact" class="route">Contacts</a>
-        </div>
-        <div class="flex__center">
-            <label class="theme__toggle">
-                <input type="checkbox" name="" id="theme-checkbox">
-                <div class="icon__container">
-                    <i data-lucide="sun" class="moon"></i>
-                    <i data-lucide="moon" class="sun"></i>
-                </div>
-            </label>
-            <div class="icon__container menu__btn" id="menu__btn">
-                <i data-lucide="align-justify"></i>
-            </div>
-        </div>
+      </div>
     </nav>
     <!----NavBar End---------------->
 
-
-
     <!----Sidebar Start---------------->
     <aside class="sidebar">
-        <div class="sidebar__wrapper">
-            <div class="flex__center top">
-                <div class="logo">
-                    <i data-custom-icon="logo"></i>
-                </div>
-                <div class="icon__container" id="close-sidebar-btn">
-                    <i data-lucide="circle-x"></i>
-                </div>
-            </div>
-            <div class="middle navlinks">
-              <a href="#header" class="navitem">Home</a>
-              <a href="#about" class="navitem">About Me</a>
-              <a href="#services" class="navitem">My Services</a>
-              <a href="#projects" class="navitem">My Projects</a>
-              <a href="#contact" class="navitem">Contacts</a>
-            </div>
+      <div class="sidebar__wrapper">
+        <div class="flex__center top">
+          <div class="logo">
+            <i data-custom-icon="logo"></i>
+          </div>
+          <div class="icon__container" id="close-sidebar-btn">
+            <i data-lucide="circle-x"></i>
+          </div>
         </div>
+        <div class="middle navlinks">
+          <a href="#header" class="navitem">Home</a>
+          <a href="#about" class="navitem">About Me</a>
+          <a href="#services" class="navitem">My Services</a>
+          <a href="#projects" class="navitem">My Projects</a>
+          <a href="#contact" class="navitem">Contacts</a>
+        </div>
+      </div>
     </aside>
     <!----Sidebar End---------------->
 
-
-
     <!----Header Section Start---------------->
     <section id="header" class="bg__secondary">
-        <div class="spotlight"></div>
-            <div class="container">
-                <div class="grid">
-                    <div class="me">
-                        <img src="./assets/HexaPic.png" alt="">
-                    </div>
-                    <div class="user__info">
-                        <h2 class="sub__title">Hello folks..! It's me Jiban Budhathoki.</h2>
-                        <h1 class="title">Developer</h1>
-                        <p class="description">A Passionate Web Developer and Instructor
-                          with 3+ years of experience or Programmer so
-                           far specialized in Python, Pycharm and Programmer. Actually,I am handling all IT 
-                           related work of Facebook Meta Group Company and website development, 
-                           app development and all releted work of IT.
-                        </p>
-                        <div class="flex buttons">
-                            <div class="flex social__handles">
-                                <a href="https://www.facebook.com/dearjiban" target="_blanks" class="icon__container handles">
-                                    <i data-lucide="facebook"></i>
-                                </a>
-                                <a href="https://x.com/OggyGJiban" target="_blanks" class="icon__container handles">
-                                    <i data-lucide="twitter"></i>
-                                </a>
-                                <a href="www.linkedin.com/in/jiban-budhathoki" target="_blanks" class="icon__container handles">
-                                    <i data-lucide="linkedin"></i>
-                                </a>
-                            </div>
-                            <a href="#contact" class="btn btn__primary">Lets Talk!</a>
-                        </div>
-                    </div>
-                    <div class="points">
-                        <div class="spotlight"></div>
-                        <!----Point start-->
-                        <div class="point">
-                            <div class="flex">
-                               <div class="odometer sub__title" id="experience"></div>
-                               <h3 class="sub__title">+</h3>
-                            </div>
-                               <p class="text_muted">Years of Experience</p>
-                        </div>
-                        <!----Point end-->
+      <div class="spotlight"></div>
+      <div class="container">
+        <div class="grid">
+          <div class="me">
+            <img src="./assets/HexaPic.png" alt="" />
+          </div>
+          <div class="user__info">
+            <h2 class="sub__title">Hello folks..! It's me Jiban Budhathoki.</h2>
+            <h1 class="title">Developer</h1>
+            <p class="description">
+              A Passionate Web Developer and Instructor with 3+ years of
+              experience or Programmer so far specialized in Python, Pycharm and
+              Programmer. Actually,I am handling all IT related work of Facebook
+              Meta Group Company and website development, app development and
+              all releted work of IT.
+            </p>
+            <div class="flex buttons">
+              <div class="flex social__handles">
+                <a
+                  href="https://www.facebook.com/dearjiban"
+                  target="_blanks"
+                  class="icon__container handles"
+                >
+                  <i data-lucide="facebook"></i>
+                </a>
+                <a
+                  href="https://x.com/OggyGJiban"
+                  target="_blanks"
+                  class="icon__container handles"
+                >
+                  <i data-lucide="twitter"></i>
+                </a>
+                <a
+                  href="www.linkedin.com/in/jiban-budhathoki"
+                  target="_blanks"
+                  class="icon__container handles"
+                >
+                  <i data-lucide="linkedin"></i>
+                </a>
+              </div>
+              <a href="#contact" class="btn btn__primary">Lets Talk!</a>
+            </div>
+          </div>
+          <div class="points">
+            <div class="spotlight"></div>
+            <!----Point start-->
+            <div class="point">
+              <div class="flex">
+                <div class="odometer sub__title" id="experience"></div>
+                <h3 class="sub__title">+</h3>
+              </div>
+              <p class="text_muted">Years of Experience</p>
+            </div>
+            <!----Point end-->
 
-                          <!----Point start-->
-                        <div class="point">
-                            <div class="flex">
-                               <div class="odometer sub__title" id="Projects"></div>
-                               <h3 class="sub__title">+</h3>
-                            </div>
-                               <p class="text_muted">Project Completed</p>
-                        </div>
-                        <!----Point end-->
+            <!----Point start-->
+            <div class="point">
+              <div class="flex">
+                <div class="odometer sub__title" id="Projects"></div>
+                <h3 class="sub__title">+</h3>
+              </div>
+              <p class="text_muted">Project Completed</p>
+            </div>
+            <!----Point end-->
 
-                          <!----Point start-->
-                        <div class="point">
-                            <div class="flex">
-                               <div class="odometer sub__title" id="awards"></div>
-                               <h3 class="sub__title">+</h3>
-                            </div>
-                               <p class="text_muted">Awards Achieve</p>
-                        </div>
-                          <!----Point end-->
+            <!----Point start-->
+            <div class="point">
+              <div class="flex">
+                <div class="odometer sub__title" id="awards"></div>
+                <h3 class="sub__title">+</h3>
+              </div>
+              <p class="text_muted">Awards Achieve</p>
+            </div>
+            <!----Point end-->
 
-                          <!----Point start-->
-                        <div class="point">
-                            <div class="flex">
-                               <div class="odometer sub__title" id="clients"></div>
-                               <h3 class="sub__title">+</h3>
-                            </div>
-                               <p class="text_muted">Worldwide Clients</p>
-                        </div>
-                        <!----Point end-->
-                        
-                    </div>
-                </div>
-            </div>   
+            <!----Point start-->
+            <div class="point">
+              <div class="flex">
+                <div class="odometer sub__title" id="clients"></div>
+                <h3 class="sub__title">+</h3>
+              </div>
+              <p class="text_muted">Worldwide Clients</p>
+            </div>
+            <!----Point end-->
+          </div>
+        </div>
+      </div>
     </section>
     <!----Header Section End---------------->
 
-
-
     <!-------About start------------->
     <section id="about" class="bg__secondary">
-        <div class="container grid">
-            <!-----box start-->
-            <div class="box self__start">
-                <div class="spotlight"></div>
-                <div class="cluster">
-                    <div class="flex user">
-                        <div class="profile">
-                            <img src="./assets/me.png" alt="">
-                        </div>
-                        <div class="details">
-                            <h4>Jiban Budhathoki</h4>
-                            <p class="text__muted">Programmer</p>
-                        </div>
-                    </div>
-                    <h2 class="sub__title">
-                        <span class="primary">Passionate</span> Developer and Lifelong Learner
-                    </h2>
-                    <p class="description">I adapt to different time zones to make
-                         sure communication is smooth, no matter where you're located.
-                        </p>
-                </div>
-                <i data-custom-icon="window" class="kit window"></i>
+      <div class="container grid">
+        <!-----box start-->
+        <div class="box self__start">
+          <div class="spotlight"></div>
+          <div class="cluster">
+            <div class="flex user">
+              <div class="profile">
+                <img src="./assets/me.png" alt="" />
+              </div>
+              <div class="details">
+                <h4>Jiban Budhathoki</h4>
+                <p class="text__muted">Programmer</p>
+              </div>
             </div>
-            <!-----box End-->
+            <h2 class="sub__title">
+              <span class="primary">Passionate</span> Developer and Lifelong
+              Learner
+            </h2>
+            <p class="description">
+              I adapt to different time zones to make sure communication is
+              smooth, no matter where you're located.
+            </p>
+          </div>
+          <i data-custom-icon="window" class="kit window"></i>
+        </div>
+        <!-----box End-->
 
-
-            <!------box start-->
-            <div class="col-2 box">
-                <div class="spotlight"></div>
-                <div class="flex row cluster">
-                    <div class="code__block">
-                        <div class="flex__center dot__container">
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                        </div>
-<pre>
+        <!------box start-->
+        <div class="col-2 box">
+          <div class="spotlight"></div>
+          <div class="flex row cluster">
+            <div class="code__block">
+              <div class="flex__center dot__container">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <pre>
 <code>
  const= document.getElementById
  ("menu__btn");
@@ -250,494 +269,542 @@
  };
 </code>
 </pre>
-                    </div>
-                    <div class="my__drive">
-                        <h2 class="sub__title">
-                            What <span class="primary">Drives Me</span>
-                        </h2>
-                        <p class="description">
-                            I’m passionate about the intersection of design and
-                            development. I believe the best digital experiences are built
-                            with a deep understanding of the user and a commitment to
-                            innovation. Whether working on a simple landing page or a
-                            complex web app, I bring precision, creativity, and a
-                            user-first mindset to every project.
-                        </p>
-                    </div>
-                </div>
-                <i data-custom-icon="grid-wire-frame" class="kit grid__wireframe"></i>
             </div>
-            <!------box end-->
-            
-
-            <!-------box start-->
-            <div class="col-2 box">
-                <div class="cluster">
-                    <div class="column">
-                        <h2 class="sub__title">
-                            My <span class="primary">Tech Stack</span>
-                        </h2>
-                        <p class="description">
-                            Always Evolving My Tech Stack
-                        </p>
-                    </div>
-                    <div class="column stacks__container">
-                        <div class="flex__center btn stack">
-                            <i data-custom-icon="react"></i>ReactJs
-                        </div>
-                        <div class="flex__center btn stack">
-                            <i data-custom-icon="express"></i>ExpressJs
-                        </div>
-                        <div class="flex__center btn stack">
-                            <i data-custom-icon="github"></i>Github
-                        </div>
-                        <div class="flex__center btn stack">
-                            <i data-custom-icon="nextjs"></i>NextJs
-                        </div>
-                        <div class="flex__center btn stack">
-                            <i data-custom-icon="tailwindcss"></i>TailwindCss
-                        </div>
-                        <div class="flex__center btn stack">
-                            <i data-custom-icon="typescript"></i>Typescript
-                        </div>
-                    </div>
-                </div>
-                <i data-custom-icon="grid" class="kit grid__box"></i>
-                <i data-custom-icon="card-ui" class="kit card__ui"></i>
+            <div class="my__drive">
+              <h2 class="sub__title">
+                What <span class="primary">Drives Me</span>
+              </h2>
+              <p class="description">
+                I’m passionate about the intersection of design and development.
+                I believe the best digital experiences are built with a deep
+                understanding of the user and a commitment to innovation.
+                Whether working on a simple landing page or a complex web app, I
+                bring precision, creativity, and a user-first mindset to every
+                project.
+              </p>
             </div>
-            <!-------box End-->
-            
-
-            <!-------box start-->
-            <div class="box flex__center last__box">
-                <div class="cluster">
-                    <h2 class="text__white sub__title">
-                        I'm Committed to Collaboration and Clear Communication
-                    </h2>
-                    <div class="flex__center btn__wrapper">
-                        <a href="#contact" class="btn">Let's Collaborate</a>
-                    </div>
-                </div>
-            </div>
-            <!-------box End-->
-
+          </div>
+          <i data-custom-icon="grid-wire-frame" class="kit grid__wireframe"></i>
         </div>
+        <!------box end-->
+
+        <!-------box start-->
+        <div class="col-2 box">
+          <div class="cluster">
+            <div class="column">
+              <h2 class="sub__title">
+                My <span class="primary">Tech Stack</span>
+              </h2>
+              <p class="description">Always Evolving My Tech Stack</p>
+            </div>
+            <div class="column stacks__container">
+              <div class="flex__center btn stack">
+                <i data-custom-icon="react"></i>ReactJs
+              </div>
+              <div class="flex__center btn stack">
+                <i data-custom-icon="express"></i>ExpressJs
+              </div>
+              <div class="flex__center btn stack">
+                <i data-custom-icon="github"></i>Github
+              </div>
+              <div class="flex__center btn stack">
+                <i data-custom-icon="nextjs"></i>NextJs
+              </div>
+              <div class="flex__center btn stack">
+                <i data-custom-icon="tailwindcss"></i>TailwindCss
+              </div>
+              <div class="flex__center btn stack">
+                <i data-custom-icon="typescript"></i>Typescript
+              </div>
+            </div>
+          </div>
+          <i data-custom-icon="grid" class="kit grid__box"></i>
+          <i data-custom-icon="card-ui" class="kit card__ui"></i>
+        </div>
+        <!-------box End-->
+
+        <!-------box start-->
+        <div class="box flex__center last__box">
+          <div class="cluster">
+            <h2 class="text__white sub__title">
+              I'm Committed to Collaboration and Clear Communication
+            </h2>
+            <div class="flex__center btn__wrapper">
+              <a href="#contact" class="btn">Let's Collaborate</a>
+            </div>
+          </div>
+        </div>
+        <!-------box End-->
+      </div>
     </section>
     <!-------About Ends------------->
 
-
-
     <!-----Services Start---->
     <section id="services" class="bg__secondary">
-        <div class="container">
-            <div class="section__header">
-                <h2 class="sub__title">
-                    My <span class="primary">Services</span>
-                </h2>
-                <p class="description">
-                    I specialize in React and front-end development, helping 
-                    students build real-world projects and master 
-                    modern web technologies.
-                </p>
-            </div>
-            <div class="services">
-                <!---Services Start--1----> 
-              <div class="service">
-                    <div class="flex__center circle">
-                        <div class="spotlight"></div>
-                        <div class="icon__container">
-                            <i data-lucide="smartphone"></i>
-                        </div>
-                    </div>
-                    <h3 class="name">Responsive Web Develop</h3>
-                    <p class="text__muted description">
-                        Implementing reusable components.
-                        Participating in large scale application.
-                        Working on the performance of web applications.
-                        Generating new ideas for better user experience.
-                    </p>
-                    <div class="flex__center">
-                        <a href="#contact" class="btn">
-                            Let's Talk <i data-lucide="arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <!---Services End--1---->
-
-                <!---Services Start--2----> 
-              <div class="service">
-                    <div class="flex__center circle">
-                        <div class="spotlight"></div>
-                        <div class="icon__container">
-                            <i data-lucide="banknote-arrow-up"></i>
-                        </div>
-                    </div>
-                    <h3 class="name">Renovation</h3>
-                    <p class="text__muted description">
-                            Additionally, to making something new, 
-                            or bringing something back to 
-                            life and can apply in social
-                             contextsPlanning,Obtaining necessary permits,Demolition,
-                            Contractor,Project Manager, Architect / Designer.
-                    </p>
-                    <div class="flex__center">
-                        <a href="#contact" class="btn">
-                            Let's Talk <i data-lucide="arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <!---Services End--2---->
-
-                <!---Services Start--3----> 
-              <div class="service">
-                    <div class="flex__center circle">
-                        <div class="spotlight"></div>
-                        <div class="icon__container">
-                            <i data-lucide="pencil"></i>
-                        </div>
-                    </div>
-                    <h3 class="name">Course Instruct</h3>
-                    <p class="text__muted description">
-                        Teaching Hacking, Javascript, React and TailwindCSS.
-                        Participating in preparing course materials.
-                        Helping students through their way in learning web development technologies.
-                    </p>
-                    <div class="flex__center">
-                        <a href="#contact" class="btn">
-                            Let's Talk <i data-lucide="arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <!---Services End--3---->
-
-                <!---Services Start--4----> 
-              <div class="service">
-                    <div class="flex__center circle">
-                        <div class="spotlight"></div>
-                        <div class="icon__container">
-                            <i data-lucide="code"></i>
-                        </div>
-                    </div>
-                    <h3 class="name">Full Stack Develop</h3>
-                    <p class="text__muted description">
-                        Implementing reusable components,
-                        Participating in large scale application,
-                        Working on the performance of web applications,
-                        Generating new ideas for better user experience.
-
-                    </p>
-                    <div class="flex__center">
-                        <a href="#contact" class="btn">
-                            Let's Talk <i data-lucide="arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <!---Services End--4---->
-
-                <!---Services Start--5----> 
-              <div class="service">
-                    <div class="flex__center circle">
-                        <div class="spotlight"></div>
-                        <div class="icon__container">
-                            <i data-lucide="pencil-ruler"></i>
-                        </div>
-                    </div>
-                    <h3 class="name">Planning</h3>
-                    <p class="text__muted description">
-                        Planning is based on foresight, 
-                        the fundamental capacity for mental time travel. 
-                        Some researchers regard the evolution
-                        of forethought - the capacity to think ahead - as a 
-                        prime mover in human evolution.
-                    </p>
-                    <div class="flex__center">
-                        <a href="#contact" class="btn">
-                            Let's Talk <i data-lucide="arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <!---Services End--5---->
- 
-            </div>
+      <div class="container">
+        <div class="section__header">
+          <h2 class="sub__title">My <span class="primary">Services</span></h2>
+          <p class="description">
+            I specialize in React and front-end development, helping students
+            build real-world projects and master modern web technologies.
+          </p>
         </div>
+        <div class="services">
+          <!---Services Start--1---->
+          <div class="service">
+            <div class="flex__center circle">
+              <div class="spotlight"></div>
+              <div class="icon__container">
+                <i data-lucide="smartphone"></i>
+              </div>
+            </div>
+            <h3 class="name">Responsive Web Develop</h3>
+            <p class="text__muted description">
+              Implementing reusable components. Participating in large scale
+              application. Working on the performance of web applications.
+              Generating new ideas for better user experience.
+            </p>
+            <div class="flex__center">
+              <a href="#contact" class="btn">
+                Let's Talk <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <!---Services End--1---->
+
+          <!---Services Start--2---->
+          <div class="service">
+            <div class="flex__center circle">
+              <div class="spotlight"></div>
+              <div class="icon__container">
+                <i data-lucide="banknote-arrow-up"></i>
+              </div>
+            </div>
+            <h3 class="name">Renovation</h3>
+            <p class="text__muted description">
+              Additionally, to making something new, or bringing something back
+              to life and can apply in social contextsPlanning,Obtaining
+              necessary permits,Demolition, Contractor,Project Manager,
+              Architect / Designer.
+            </p>
+            <div class="flex__center">
+              <a href="#contact" class="btn">
+                Let's Talk <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <!---Services End--2---->
+
+          <!---Services Start--3---->
+          <div class="service">
+            <div class="flex__center circle">
+              <div class="spotlight"></div>
+              <div class="icon__container">
+                <i data-lucide="pencil"></i>
+              </div>
+            </div>
+            <h3 class="name">Course Instruct</h3>
+            <p class="text__muted description">
+              Teaching Hacking, Javascript, React and TailwindCSS. Participating
+              in preparing course materials. Helping students through their way
+              in learning web development technologies.
+            </p>
+            <div class="flex__center">
+              <a href="#contact" class="btn">
+                Let's Talk <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <!---Services End--3---->
+
+          <!---Services Start--4---->
+          <div class="service">
+            <div class="flex__center circle">
+              <div class="spotlight"></div>
+              <div class="icon__container">
+                <i data-lucide="code"></i>
+              </div>
+            </div>
+            <h3 class="name">Full Stack Develop</h3>
+            <p class="text__muted description">
+              Implementing reusable components, Participating in large scale
+              application, Working on the performance of web applications,
+              Generating new ideas for better user experience.
+            </p>
+            <div class="flex__center">
+              <a href="#contact" class="btn">
+                Let's Talk <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <!---Services End--4---->
+
+          <!---Services Start--5---->
+          <div class="service">
+            <div class="flex__center circle">
+              <div class="spotlight"></div>
+              <div class="icon__container">
+                <i data-lucide="pencil-ruler"></i>
+              </div>
+            </div>
+            <h3 class="name">Planning</h3>
+            <p class="text__muted description">
+              Planning is based on foresight, the fundamental capacity for
+              mental time travel. Some researchers regard the evolution of
+              forethought - the capacity to think ahead - as a prime mover in
+              human evolution.
+            </p>
+            <div class="flex__center">
+              <a href="#contact" class="btn">
+                Let's Talk <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <!---Services End--5---->
+        </div>
+      </div>
     </section>
     <!-----Services End---->
 
-
-
     <!----Project Start------->
     <section id="projects">
-        <div class="container">
-            <div class="section__header">
-                <h2 class="sub__title">
-                    My Projects
-                </h2>
-                <p class="description">
-                    I have worked on a variety of web development, 
-                    software development projects ranging from responsive 
-                    websites for small businesses to full-stack applications 
-                    and complex web interfaces. As well as Setting up a 
-                    PC for programming involves considering factors such as 
-                    performance, comfort, and budget. Here are some key components 
-                    and considerations that i used for an optimal programming PC 
-                    setup: here's the way i buid my pc setup.
-                </p>
-            </div>
-            <div class="projects">
-                <!------projects start-1--->
-                <div class="project">
-                    <a href="#" target="_blank" class="picture">
-                        <img src="./assets/portfolioJ.png" alt="">
-                    </a>
-                    <div class="flex details">
-                        <h3 class="line__clamp__1">
-                            Portfolio Website
-                        </h3>
-                        <p class="text__muted description line__clamp__4">
-                            Showcase your skills and creativity with a standout animated
-                            portfolio on YouTube. Capture attention, highlight your work,
-                            and leave a lasting impression with engaging visuals and dynamic
-                            storytelling!
-                        </p>
-                        <div class="flex bottom">
-                            <a href="#" target="_blank" class="flex__center btn">
-                                <i data-lucide="square-arrow-out-up-right"></i>Visit Now
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!------projects end--1-->
-
-                <!------projects start-2--->
-                <div class="project">
-                    <a href="#" target="_blank" class="picture">
-                        <img src="./assets/website-img-4.jpg" alt="">
-                    </a>
-                    <div class="flex details">
-                        <h3 class="line__clamp__1">
-                            E-Commerce Sites
-                        </h3>
-                        <p class="text__muted description line__clamp__4">
-                            This is the projects that i developed full stack e-commerce site
-                            on 2024.Create a cutting-edge, animated video conferencing web app using
-                            ReactJS and ZegoCloud. This project combines real-time
-                            communication with sleek design, delivering a smooth,
-                            interactive user experience for virtual meetings.
-                        </p>
-                        <div class="flex bottom">
-                            <a href="#" target="_blank" class="flex__center btn">
-                                <i data-lucide="square-arrow-out-up-right"></i>Visit Now
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!------projects end--2-->
-
-                <!------projects start-3--->
-                <div class="project">
-                    <a href="#" target="_blank" class="picture">
-                        <img src="./assets/project2.png" alt="">
-                    </a>
-                    <div class="flex details">
-                        <h3 class="line__clamp__1">
-                            Designer portfolio with nextJs
-                        </h3>
-                        <p class="text__muted description line__clamp__4">
-                            A sleek and modern designer portfolio built with Next.js,
-                            showcasing responsive design, fast performance, and seamless
-                            navigation. Perfect for creative professionals looking to
-                            display their work in style
-                        </p>
-                        <div class="flex bottom">
-                            <a href="#" target="_blank" class="flex__center btn">
-                                <i data-lucide="square-arrow-out-up-right"></i>Visit Now
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!------projects end--3-->
-
-                <!------projects start-4--->
-                <div class="project">
-                    <a href="#" target="_blank" class="picture">
-                        <img src="./assets/pcset.png" alt="">
-                    </a>
-                    <div class="flex details">
-                        <h3 class="line__clamp__1">
-                            PC SetUp
-                        </h3>
-                        <p class="text__muted description line__clamp__4">
-                            It's a happy moments for me to tell you guys that i build my own high end pc 
-                            setup. As well as Setting up a PC for programming involves 
-                            considering factors such as performance, comfort, and budget.
-                             Here are some key components and considerations that i used for 
-                             an optimal programming PC setup.
-                        </p>
-                        <div class="flex bottom">
-                            <a href="#" target="_blank" class="flex__center btn">
-                                <i data-lucide="square-arrow-out-up-right"></i>Visit Now
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!------projects end--4-->
-            </div>
+      <div class="container">
+        <div class="section__header">
+          <h2 class="sub__title">My Projects</h2>
+          <p class="description">
+            I have worked on a variety of web development, software development
+            projects ranging from responsive websites for small businesses to
+            full-stack applications and complex web interfaces. As well as
+            Setting up a PC for programming involves considering factors such as
+            performance, comfort, and budget. Here are some key components and
+            considerations that i used for an optimal programming PC setup:
+            here's the way i buid my pc setup.
+          </p>
         </div>
+        <div class="projects">
+          <!------projects start-1--->
+          <div class="project">
+            <a href="#" target="_blank" class="picture">
+              <img src="./assets/portfolioJ.png" alt="" />
+            </a>
+            <div class="flex details">
+              <h3 class="line__clamp__1">Portfolio Website</h3>
+              <p class="text__muted description line__clamp__4">
+                Showcase your skills and creativity with a standout animated
+                portfolio on YouTube. Capture attention, highlight your work,
+                and leave a lasting impression with engaging visuals and dynamic
+                storytelling!
+              </p>
+              <div class="flex bottom">
+                <a href="#" target="_blank" class="flex__center btn">
+                  <i data-lucide="square-arrow-out-up-right"></i>Visit Now
+                </a>
+              </div>
+            </div>
+          </div>
+          <!------projects end--1-->
+
+          <!------projects start-2--->
+          <div class="project">
+            <a href="#" target="_blank" class="picture">
+              <img src="./assets/website-img-4.jpg" alt="" />
+            </a>
+            <div class="flex details">
+              <h3 class="line__clamp__1">E-Commerce Sites</h3>
+              <p class="text__muted description line__clamp__4">
+                This is the projects that i developed full stack e-commerce site
+                on 2024.Create a cutting-edge, animated video conferencing web
+                app using ReactJS and ZegoCloud. This project combines real-time
+                communication with sleek design, delivering a smooth,
+                interactive user experience for virtual meetings.
+              </p>
+              <div class="flex bottom">
+                <a href="#" target="_blank" class="flex__center btn">
+                  <i data-lucide="square-arrow-out-up-right"></i>Visit Now
+                </a>
+              </div>
+            </div>
+          </div>
+          <!------projects end--2-->
+
+          <!------projects start-3--->
+          <div class="project">
+            <a href="#" target="_blank" class="picture">
+              <img src="./assets/project2.png" alt="" />
+            </a>
+            <div class="flex details">
+              <h3 class="line__clamp__1">Designer portfolio with nextJs</h3>
+              <p class="text__muted description line__clamp__4">
+                A sleek and modern designer portfolio built with Next.js,
+                showcasing responsive design, fast performance, and seamless
+                navigation. Perfect for creative professionals looking to
+                display their work in style
+              </p>
+              <div class="flex bottom">
+                <a href="#" target="_blank" class="flex__center btn">
+                  <i data-lucide="square-arrow-out-up-right"></i>Visit Now
+                </a>
+              </div>
+            </div>
+          </div>
+          <!------projects end--3-->
+
+          <!------projects start-4--->
+          <div class="project">
+            <a href="#" target="_blank" class="picture">
+              <img src="./assets/pcset.png" alt="" />
+            </a>
+            <div class="flex details">
+              <h3 class="line__clamp__1">PC SetUp</h3>
+              <p class="text__muted description line__clamp__4">
+                It's a happy moments for me to tell you guys that i build my own
+                high end pc setup. As well as Setting up a PC for programming
+                involves considering factors such as performance, comfort, and
+                budget. Here are some key components and considerations that i
+                used for an optimal programming PC setup.
+              </p>
+              <div class="flex bottom">
+                <a href="#" target="_blank" class="flex__center btn">
+                  <i data-lucide="square-arrow-out-up-right"></i>Visit Now
+                </a>
+              </div>
+            </div>
+          </div>
+          <!------projects end--4-->
+        </div>
+      </div>
     </section>
     <!----Project End------->
-
 
     <!-------testimonials Start----------->
     <!-------testimonials End----------->
 
-
     <!-------Contact Start----------->
     <section id="contact">
-        <div class="container">
-            <div class="left__column">
-                <div class="box">
-                    <div class="cluster">
-                        <h2 class="sub__title">
-                           Get In<span class="primary">Touch</span>..!
-                        </h2>
-                        <p class="description">
-                            Feel free to reach out if you’d like to collaborate
-                            you are just a few clicks away!
-                        </p>
-                    </div>
-                    <i data-custom-icon="list-option-ui" class="list__ui"></i>
-                </div>
-                <div class="box">
-                    <div class="cluster">
-                        <!-----Option Start 1-------->
-                         <div class="flex option">
-                            <div class="icon__container">
-                                <i data-lucide="mail"></i>
-                            </div>
-                            <div class="details">
-                                <h3 class="name">Email</h3>
-                                <p class="text__muted value">iam.jiban11@gmail.com</p>
-                            </div>
-                        </div>
-                        <!-----Option End 1-------->
-
-                        <!-----Option Start 2------->
-                         <div class="flex option">
-                            <div class="icon__container">
-                                <i data-lucide="phone"></i>
-                            </div>
-                            <div class="details">
-                                <h3 class="name">Phone</h3>
-                                <p class="text__muted value">+44 7362342247</p>
-                            </div>
-                        </div>
-                        <!-----Option End 2-------->
-
-                        <!-----Option Start 3-------->
-                         <div class="flex option">
-                            <div class="icon__container">
-                                <i data-lucide="map-pin"></i>
-                            </div>
-                            <div class="details">
-                                <h3 class="name">Address</h3>
-                                <p class="text__muted value">London, United Kingdom</p>
-                            </div>
-                        </div>
-                        <!-----Option End 3-------->
-                       
-                    </div>
-                </div>
+      <div class="container">
+        <div class="left__column">
+          <div class="box">
+            <div class="cluster">
+              <h2 class="sub__title">
+                Get In<span class="primary">Touch</span>..!
+              </h2>
+              <p class="description">
+                Feel free to reach out if you’d like to collaborate you are just
+                a few clicks away!
+              </p>
             </div>
-            <form action="" class="contact__form">
-                <div class="spotlight"></div>
-                <h2 class="sub__title">
-                    Let's work <span class="primary">together!</span>
-                </h2>
-                <div class="row">
-                    <input  type="text" placeholder="First name" name="" class="control" required="required">
-                    <input type="text" placeholder="Last name" name="lastname" class="control" required="required">
+            <i data-custom-icon="list-option-ui" class="list__ui"></i>
+          </div>
+          <div class="box">
+            <div class="cluster">
+              <!-----Option Start 1-------->
+              <div class="flex option">
+                <div class="icon__container">
+                  <i data-lucide="mail"></i>
                 </div>
+                <div class="details">
+                  <h3 class="name">Email</h3>
+                  <p class="text__muted value">iam.jiban11@gmail.com</p>
+                </div>
+              </div>
+              <!-----Option End 1-------->
 
-                <div class="row">
-                    <input type="email" placeholder="Email" name="" class="control" required="required">
-                    <input type="tel" placeholder="Phone" name="" class="control" required="required">
+              <!-----Option Start 2------->
+              <div class="flex option">
+                <div class="icon__container">
+                  <i data-lucide="phone"></i>
                 </div>
-                <textarea name="" placeholder="Message" class="control" required="required"></textarea>
-                <button type="submit" name="" value="Send" class="btn btn__primary submit__btn">Send</button>
-            </form>
+                <div class="details">
+                  <h3 class="name">Phone</h3>
+                  <p class="text__muted value">+44 7362342247</p>
+                </div>
+              </div>
+              <!-----Option End 2-------->
+
+              <!-----Option Start 3-------->
+              <div class="flex option">
+                <div class="icon__container">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div class="details">
+                  <h3 class="name">Address</h3>
+                  <p class="text__muted value">London, United Kingdom</p>
+                </div>
+              </div>
+              <!-----Option End 3-------->
+            </div>
+          </div>
         </div>
+        <form action="" class="contact__form">
+          <div class="spotlight"></div>
+          <h2 class="sub__title">
+            Let's work <span class="primary">together!</span>
+          </h2>
+          <div class="row">
+            <input
+              type="text"
+              placeholder="First name"
+              name=""
+              class="control"
+              required="required"
+            />
+            <input
+              type="text"
+              placeholder="Last name"
+              name="lastname"
+              class="control"
+              required="required"
+            />
+          </div>
+
+          <div class="row">
+            <input
+              type="email"
+              placeholder="Email"
+              name=""
+              class="control"
+              required="required"
+            />
+            <input
+              type="tel"
+              placeholder="Phone"
+              name=""
+              class="control"
+              required="required"
+            />
+          </div>
+          <textarea
+            name=""
+            placeholder="Message"
+            class="control"
+            required="required"
+          ></textarea>
+          <button
+            type="submit"
+            name=""
+            value="Send"
+            class="btn btn__primary submit__btn"
+          >
+            Send
+          </button>
+        </form>
+      </div>
     </section>
     <!-------Contact End----------->
 
     <!-------Footer Start------------>
     <section id="footer">
-        <div class="spotlight"></div>
-        <div class="container">
-            <div class="grid">
-                <div class="col-2 column">
-                    <div class="logo">
-                        <i data-custom-icon="logo"></i>
-                    </div>
-                    <p class="text__muted description">
-                        Crafting responsive, high-performance websites with clean code and
-                         a user-focused approach. Let’s build something amazing together. <br>
-                        मेरो साइट भ्रमण गर्नुभएकोमा धन्यवाद।
-                        (Thanks for visiting me..🙏)
-                    </p>
-                    <div class="flex social__handles">
-                       <a href="https://www.facebook.com/dearjiban" target="_blanks" class="icon__container handles">
-                           <i data-lucide="facebook"></i>
-                       </a>
-                       <a href="https://www.linkedin.com/in/jiban-budhathoki" target="_blanks" class="icon__container handles">
-                           <i data-lucide="linkedin"></i>
-                       </a>
-                       <a href="https://www.instagram.com/musicworld_status/" target="_blanks" class="icon__container handles">
-                           <i data-lucide="instagram"></i>
-                       </a>
-                       <a href="https://x.com/OggyGJiban" target="_blanks" class="icon__container handles">
-                           <i data-lucide="twitter"></i>
-                       </a>
-                       <a href="https://www.youtube.com/@oggytheplayz" target="_blanks" class="icon__container handles">
-                           <i data-lucide="youtube"></i>
-                       </a>
-                    </div>
-                </div>
-                <div class="column">
-                    <h3 class="group__name">Hot Links</h3>
-                    <div class="routes__container">
-                        <a href="#header" class="route__item">Home</a>
-                        <a href="#about" class="route__item">About Me</a>
-                        <a href="#services" class="route__item">Services</a>
-                        <a href="#projects" class="route__item">Projects</a>
-                        <a href="#contact" class="route__item">Contacts</a>
-                    </div>
-                </div>
-                <div class="column">
-                    <h3 class="group__name">Other</h3>
-                    <div class="routes__container">
-                        <a href="#" class="route__item">Privacy Policy</a>
-                        <a href="#" class="route__item">Terms and Condition</a>
-                        <a href="#" class="route__item">Cookie Policy</a>
-                    </div>
-                </div>
+      <div class="spotlight"></div>
+      <div class="container">
+        <div class="grid">
+          <div class="col-2 column">
+            <div class="logo">
+              <i data-custom-icon="logo"></i>
             </div>
-            <!----end grid----->
-            <div class="copyright">
-                <h3>Copyright &copy; 2024 Jiban Budhathoki. All Right Reserved.</h3>
-                <p class="text__muted">
-                    Built with love by Jiban Budhathoki.
-                </p>
+            <p class="text__muted description">
+              Crafting responsive, high-performance websites with clean code and
+              a user-focused approach. Let’s build something amazing together.
+              <br />
+              मेरो साइट भ्रमण गर्नुभएकोमा धन्यवाद। (Thanks for visiting me..🙏)
+            </p>
+            <div class="flex social__handles">
+              <a
+                href="https://www.facebook.com/dearjiban"
+                target="_blanks"
+                class="icon__container handles"
+              >
+                <i data-lucide="facebook"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/jiban-budhathoki"
+                target="_blanks"
+                class="icon__container handles"
+              >
+                <i data-lucide="linkedin"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/musicworld_status/"
+                target="_blanks"
+                class="icon__container handles"
+              >
+                <i data-lucide="instagram"></i>
+              </a>
+              <a
+                href="https://x.com/OggyGJiban"
+                target="_blanks"
+                class="icon__container handles"
+              >
+                <i data-lucide="twitter"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/@oggytheplayz"
+                target="_blanks"
+                class="icon__container handles"
+              >
+                <i data-lucide="youtube"></i>
+              </a>
             </div>
+          </div>
+          <div class="column">
+            <h3 class="group__name">Hot Links</h3>
+            <div class="routes__container">
+              <a href="#header" class="route__item">Home</a>
+              <a href="#about" class="route__item">About Me</a>
+              <a href="#services" class="route__item">Services</a>
+              <a href="#projects" class="route__item">Projects</a>
+              <a href="#contact" class="route__item">Contacts</a>
+            </div>
+          </div>
+          <div class="column">
+            <h3 class="group__name">Other</h3>
+            <div class="routes__container">
+              <a href="#" class="route__item">Privacy Policy</a>
+              <a href="#" class="route__item">Terms and Condition</a>
+              <a href="#" class="route__item">Cookie Policy</a>
+            </div>
+          </div>
         </div>
+        <!----end grid----->
+        <div class="copyright">
+          <h3>Copyright &copy; 2024 Jiban Budhathoki. All Right Reserved.</h3>
+          <p class="text__muted">Built with love by Jiban Budhathoki.</p>
+        </div>
+      </div>
     </section>
     <!-------Footer End------------>
 
     <!----Odometer CDN-------->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/odometer.min.js" integrity="sha512-v3fZyWIk7kh9yGNQZf1SnSjIxjAKsYbg6UQ+B+QxAZqJQLrN3jMjrdNwcxV6tis6S0s1xyVDZrDz9UoRLfRpWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/themes/odometer-theme-default.min.css" integrity="sha512-/k/mL9TQSZHAqtVqXJAiy5bt2w1P7gxdra0UlnFjVHF9a/LC2vxt7otx3BMcn79V/DZsPRwdw8tPlwbElMnIAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/odometer.min.js"
+      integrity="sha512-v3fZyWIk7kh9yGNQZf1SnSjIxjAKsYbg6UQ+B+QxAZqJQLrN3jMjrdNwcxV6tis6S0s1xyVDZrDz9UoRLfRpWw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/themes/odometer-theme-default.min.css"
+      integrity="sha512-/k/mL9TQSZHAqtVqXJAiy5bt2w1P7gxdra0UlnFjVHF9a/LC2vxt7otx3BMcn79V/DZsPRwdw8tPlwbElMnIAw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- Development version -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script src="main.js"></script>
-</body>
 
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/6868c6e979e887191322be6a/1ivcki12o";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
+  </body>
 </html>
